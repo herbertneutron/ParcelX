@@ -1,0 +1,241 @@
+﻿@model ParcelX.Models.ParcelXCusModel
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- loader -->
+<div id="loader" style="background-color:white">
+    <img src="~/img/loader.png" alt="icon" class="loading-icon">
+</div>
+<!-- * loader -->
+<!-- App Header -->
+<div class="Floatup" style="width:100%">
+
+    <style>
+
+
+        .Floatup {
+            z-index: 1;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+    <div class="appHeader no-border transparent position-absolute">
+        <div class="left">
+            <a href="/Home/Login" class="headerButton goBack">
+                <ion-icon style="color:white" name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            <img src="~/img/Logo.png" alt="logo" style="width:200px;margin-top:40%">
+        </div>
+        <div class="right">
+            <a href="/Home/Login" style="color:white" class="headerButton">
+                Login
+            </a>
+        </div>
+    </div>
+    <br /><br />
+    <!-- * App Header -->
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="section mb-5 p-2" style="max-width:80vh;margin:0 auto">
+            @using (Html.BeginForm("RegisterCus", "Home", FormMethod.Post, new { @id = "Create_Account", role = "form", enctype = "multipart/form-data", }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="card" style="background: rgba(0, 0, 0, 0.5);">
+                    <div class="card-body">
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="label" for="FirstName">First Name</label>
+                                <input type="text" name="FirstName" class="form-control" id="FirstName" placeholder="">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="label" for="LastName">Last Name</label>
+                                <input type="text" name="LastName" class="form-control" id="LastName" placeholder="">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="label" for="Mobile_Number">Mobile Number</label>
+                                <input type="text" maxlength="13" name="Mobile_Number" onblur="CheckExist()" class="form-control" id="Mobile_Number" placeholder="">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="label" for="Email">E-mail</label>
+                                <input type="email" name="Email" class="form-control" id="Email" onblur="CheckExist()" placeholder="">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="label" for="Password">Password</label>
+                                <input type="password" name="Password" class="form-control" id="Password" placeholder="">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                        </div>
+
+
+
+                        <div class="custom-control custom-checkbox mt-2 mb-1">
+                            <input type="checkbox" class="custom-control-input" onchange="Action()" id="customChecka1">
+                            <label class="custom-control-label" for="customChecka1">
+                                I agree <a href="#" data-toggle="modal" data-target="#termsModal">terms and conditions</a>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="form-button-group" style="background-color:transparent!important;max-width:80vh;margin:0 auto; display:none" id="Register">
+                    <button type="submit" style="background-color:#dea00b!important;border-color:#dea00b!important" class="btn btn-primary btn-block btn-lg">Register</button>
+                </div>
+
+            }
+        </div>
+
+    </div>
+    <!-- * App Capsule -->
+    <!-- Terms Modal -->
+    <div class="modal fade modalbox" id="termsModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Terms and Conditions</h5>
+                    <a href="javascript:;" data-dismiss="modal">Close</a>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum, urna eget finibus
+                        fermentum, velit metus maximus erat, nec sodales elit justo vitae sapien. Sed fermentum
+                        varius erat, et dictum lorem. Cras pulvinar vestibulum purus sed hendrerit. Praesent et
+                        auctor dolor. Ut sed ultrices justo. Fusce tortor erat, scelerisque sit amet diam rhoncus,
+                        cursus dictum lorem. Ut vitae arcu egestas, congue nulla at, gravida purus.
+                    </p>
+                    <p>
+                        Donec in justo urna. Fusce pretium quam sed viverra blandit. Vivamus a facilisis lectus.
+                        Nunc non aliquet nulla. Aenean arcu metus, dictum tincidunt lacinia quis, efficitur vitae
+                        dui. Integer id nisi sit amet leo rutrum placerat in ac tortor. Duis sed fermentum mi, ut
+                        vulputate ligula.
+                    </p>
+                    <p>
+                        Vivamus eget sodales elit, cursus scelerisque leo. Suspendisse lorem leo, sollicitudin
+                        egestas interdum sit amet, sollicitudin tristique ex. Class aptent taciti sociosqu ad litora
+                        torquent per conubia nostra, per inceptos himenaeos. Phasellus id ultricies eros. Praesent
+                        vulputate interdum dapibus. Duis varius faucibus metus, eget sagittis purus consectetur in.
+                        Praesent fringilla tristique sapien, et maximus tellus dapibus a. Quisque nec magna dapibus
+                        sapien iaculis consectetur. Fusce in vehicula arcu. Aliquam erat volutpat. Class aptent
+                        taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="notification-12" class="notification-box ">
+    <div class="notification-dialog ios-style bg-danger">
+        <div class="notification-header">
+
+            <div class="right">
+                <span>Now</span>
+                <a href="#" class="close-button">
+                    <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                </a>
+            </div>
+        </div>
+        <div class="notification-content">
+            <div class="in">
+                <h3 class="subtitle" id="Error"></h3>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<!-- Bootstrap-->
+<script src="~/assets/js/lib/popper.min.js"></script>
+<script src="~/assets/js/lib/apexcharts.min.js"></script>
+<script src="~/assets/js/lib/bootstrap.min.js"></script>
+<script src="~/assets/js/lib/splide.min.js"></script>
+<!-- Ionicons -->
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+<!-- Owl Carousel -->
+<script src="~/assets/js/lib/owl.carousel.min.js"></script>
+<!-- Base Js File -->
+<script src="~/assets/js/base.js"></script>
+<script>
+    function Action() {
+        if ($('#customChecka1').is(":checked"))
+            validateForm();
+         else
+            $("#Register").hide();
+    }
+
+    function validateForm() {
+
+        if ($('#FirstName').val() == "" || $('#LastName').val() == "" || $('#Mobile_Number').val() == "" || $('#Email').val() == "" || $('#Password').val() == "") {
+            $('#Error').text("It seems you have missed out a field 😥");
+            notification('notification-12', 5000)
+            $("#customChecka1").prop("checked", false);
+        } else {
+            $("#Register").show();
+
+        }
+
+    }
+
+    function CheckExist() {
+        var Mobile_Number = $('#Mobile_Number').val()
+        var Email = $('#Email').val()
+        $.ajax({
+            type: 'POST',
+            url: '/Home/CheckExistCus',
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ Email: Email, Mobile_Number: Mobile_Number }),
+            traditional: true,
+            success: function (data) {
+
+                console.log(data)
+                if (data.existsResponse == "EE") {
+                    $('#Error').text("This email already exists 😥");
+                    notification('notification-12', 5000)
+
+                } if (data.existsResponse == "ME") {
+                    $('#Error').text("The mobile number provided is already linked to an existing account 😥");
+                    notification('notification-12', 5000)
+                }
+
+            }, error: function (data) {
+                $('#Error').text("Error encountered while trying to verify data");
+                notification('notification-12', 5000)
+
+            }
+        })
+    }
+
+    function Response(title, message, icon) {
+        $('#Error').text(message);
+        notification('notification-12', 5000)
+    }
+
+    @Html.Raw(ViewBag.ErrorMessage)
+</script>

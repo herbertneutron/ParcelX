@@ -1,0 +1,43 @@
+﻿<Properties StartupConfiguration="{8D9E91AF-7D2E-4C03-A55B-FF7AFB16DC60}|Default">
+  <MonoDevelop.Ide.ItemProperties.ParcelX PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/HomeController.cs">
+    <Files>
+      <File FileName="Pages/Shared/ForgotPassword.cshtml" Line="35" Column="9" IsPinned="True" />
+      <File FileName="wwwroot/assets/css/src/bootstrap/bootstrap.min.css" IsPinned="True" />
+      <File FileName="Controllers/HomeController.cs" Line="392" Column="10" IsPinned="True" />
+      <File FileName="Pages/Shared/_Layout.cshtml" />
+      <File FileName="Pages/Shared/Login.cshtml" Line="1" Column="1" />
+      <File FileName="Pages/Shared/RegisterPartner.cshtml" />
+      <File FileName="Pages/Shared/App.cshtml" />
+      <File FileName="Pages/Shared/PartnerLogin.cshtml" />
+      <File FileName="Models/ParcelXCusModel.cs" />
+      <File FileName="Models/UserData.cs" />
+      <File FileName="Pages/Shared/Profile.cshtml" />
+      <File FileName="Startup.cs" />
+      <File FileName="Pages/Shared/Partner.cshtml" />
+      <File FileName="wwwroot/Dashboard/style.css" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ParcelX" expanded="True">
+            <Node name="ParcelX" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+              <Node name="Pages" expanded="True">
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

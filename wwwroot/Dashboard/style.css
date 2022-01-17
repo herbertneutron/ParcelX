@@ -1,0 +1,263 @@
+﻿@font-face {
+    font-family: 'CS-Interface';
+    src: url('fonts/CS-Interface.ttf?2eqyst') format('truetype'), url('fonts/CS-Interface.woff?2eqyst') format('woff'), url('fonts/CS-Interface.svg?2eqyst#CS-Interface') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="cs-"], [class*=" cs-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'CS-Interface' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cs-circle:before {
+    content: "\e922";
+}
+
+.cs-scissors:before {
+    content: "\e902";
+}
+
+.cs-question-hexagon:before {
+    content: "\e900";
+}
+
+.cs-save:before {
+    content: "\e901";
+}
+
+.cs-search:before {
+    content: "\e906";
+}
+
+.cs-send:before {
+    content: "\e907";
+}
+
+.cs-settings-2:before {
+    content: "\e908";
+}
+
+.cs-sort:before {
+    content: "\e909";
+}
+
+.cs-star:before {
+    content: "\e90a";
+}
+
+.cs-star-full:before {
+    content: "\e90b";
+}
+
+.cs-user:before {
+    content: "\e90c";
+}
+
+.cs-warning-hexagon:before {
+    content: "\e90d";
+}
+
+.cs-archive:before {
+    content: "\e90e";
+}
+
+.cs-arrow-double-left:before {
+    content: "\e90f";
+}
+
+.cs-arrow-double-right:before {
+    content: "\e910";
+}
+
+.cs-bin:before {
+    content: "\e911";
+}
+
+.cs-calendar:before {
+    content: "\e912";
+}
+
+.cs-check:before {
+    content: "\e913";
+}
+
+.cs-check-square:before {
+    content: "\e914";
+}
+
+.cs-chevron-bottom:before {
+    content: "\e915";
+}
+
+.cs-chevron-left:before {
+    content: "\e916";
+}
+
+.cs-chevron-right:before {
+    content: "\e917";
+}
+
+.cs-chevron-top:before {
+    content: "\e918";
+}
+
+.cs-clipboard:before {
+    content: "\e919";
+}
+
+.cs-clock:before {
+    content: "\e91a";
+}
+
+.cs-close:before {
+    content: "\e91b";
+}
+
+.cs-close-circle:before {
+    content: "\e91c";
+}
+
+.cs-duplicate:before {
+    content: "\e91d";
+}
+
+.cs-edit-square:before {
+    content: "\e91e";
+}
+
+.cs-error-hexagon:before {
+    content: "\e91f";
+}
+
+.cs-file-text:before {
+    content: "\e920";
+}
+
+.cs-gear:before {
+    content: "\e921";
+}
+
+.cs-info-hexagon:before {
+    content: "\e903";
+}
+
+.cs-menu:before {
+    content: "\e904";
+}
+
+.cs-more-horizontal:before {
+    content: "\e905";
+}
+.custom-file-upload {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 220px;
+}
+
+    .custom-file-upload input[type="file"] {
+        overflow: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .custom-file-upload label {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+        background-color: rgba(220, 220, 233, 0.2);
+        background-size: 45px 58px;
+        border: 1px solid #DCDCE9;
+        border-radius: 10px;
+        margin: 0;
+    }
+
+    .custom-file-upload label span {
+        display: block;
+        font-size: 15px;
+        color: #A9ABAD;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        font-weight: 500;
+        transform: translate(0%, -50%);
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        width: 100%;
+        text-align: center;
+        border-radius: 0;
+    }
+
+        .custom-file-upload label span .icon,
+        .custom-file-upload label span ion-icon {
+            --ionicon-stroke-width: 32px;
+            font-size: 48px;
+            color: #A9ABAD;
+        }
+
+        .custom-file-upload label span strong {
+            display: block;
+            font-weight: 500;
+        }
+
+        .custom-file-upload label span i {
+            font-style: normal;
+            display: block;
+        }
+
+    .custom-file-upload label.file-uploaded {
+        background-size: cover;
+        background-position: center;
+    }
+
+        .custom-file-upload label.file-uploaded:before {
+            content: "";
+            width: 38px;
+            height: 38px;
+            background: #1DCC70;
+            border-radius: 100%;
+            display: flex;
+            background-image: url("data:image/svg+xml,%0A%3Csvg width='23px' height='20px' viewBox='0 0 23 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline id='Path' stroke='%23FFFFFF' stroke-width='2.4' points='21.2 2 7.76 18 2 12'%3E%3C/polyline%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: absolute;
+            left: 50%;
+            top: calc(50% + -22px);
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-file-upload label.file-uploaded label {
+            border-color: transparent;
+        }
+
+        .custom-file-upload label.file-uploaded span {
+            bottom: 0;
+            left: 0;
+            top: auto;
+            transform: translate(0, 0);
+            font-size: 11px;
+            color: #958d9e;
+            background-color: #DCDCE9;
+        }

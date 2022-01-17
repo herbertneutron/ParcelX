@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>@ViewData["Title"] ParcelX </title>
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <meta name="keywords" content="bootstrap, mobile template, cordova, phonegap, mobile, html, responsive" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/img/Logo.png">
+    <link rel="icon" type="image/png" href="~/img/Logo.png" sizes="32x32">
+    <link rel="shortcut icon" href="~/img/Logo.png">
+</head>
+
+<body style="padding-top: unset; padding-bottom: unset; padding-left: unset;" class="full-height fullscreen-bg" >
+    <video style="width: 125%;" autoplay="" loop="" muted="" playsinline="">
+        <source src="~/img/video.webm" type="video/webm">
+        <source src="~/img/video.mp4" type="video/mp4">
+        <source src="~/img/video.ogv" type="video/ogg">
+    </video>
+
+    @RenderBody()
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

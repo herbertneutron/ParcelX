@@ -1,0 +1,121 @@
+﻿
+@model ParcelX.Models.ParcelXParModel
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- loader -->
+<div id="loader" style="background-color:white">
+    <img src="~/img/loader.png" alt="icon" class="loading-icon">
+</div>
+<!-- * loader -->
+<!-- App Header -->
+<div class="Floatup" style="width:100%">
+
+    <style>
+
+
+        .Floatup {
+            z-index: 1;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+    <div class="appHeader no-border transparent position-absolute">
+
+        <div class="pageTitle">
+            <img src="~/img/Logo.png" alt="logo" style="width:200px;margin-top:40%">
+        </div>
+        <div class="right">
+        </div>
+    </div>
+    <br /><br />
+    <!-- * App Header -->
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+
+        <div class="section mb-5 p-2" style="max-width:60vh;margin:0 auto">
+
+            @using (Html.BeginForm("LoginPar", "Home", FormMethod.Post, new { @class = "", role = "form", enctype = "multipart/form-data", }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="card" style="background: rgba(0, 0, 0, 0.5);">
+                    <div class="card-body pb-1">
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="label" for="email1">E-mail</label>
+                                <input type="email" name="Email" class="form-control" placeholder="">
+                                <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="label" for="password1">Password</label>
+                                <input type="password" name="Password" class="form-control" id="password1" placeholder="">
+                                <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-links mt-2">
+                    <div>
+                        <a style="color:#ffffff!important" href="/Home/RegisterPartner">Register Now</a>
+                    </div>
+                    <div><a style="color:#ffffff!important" href="/Home/ForgotPassword" class="text-muted">Forgot Password?</a></div>
+                </div>
+                <br/>
+                <div  style="max-width:80vh;margin:0 auto">
+                    <button type="submit" style="background-color:#dea00b!important;border-color:#dea00b!important" class="btn btn-primary btn-block btn-lg">Log in</button>
+                </div>
+            }
+        </div>
+
+    </div>
+
+</div>
+
+<div id="notification-12" class="notification-box ">
+    <div class="notification-dialog ios-style bg-danger">
+        <div class="notification-header">
+
+            <div class="right">
+                <span>Now</span>
+                <a href="#" class="close-button">
+                    <ion-icon name="close-circle" role="img" class="md hydrated" aria-label="close circle"></ion-icon>
+                </a>
+            </div>
+        </div>
+        <div class="notification-content">
+            <div class="in">
+                <h3 class="subtitle" id="Error"></h3>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<!-- Bootstrap-->
+<script src="~/assets/js/lib/popper.min.js"></script>
+<script src="~/assets/js/lib/apexcharts.min.js"></script>
+<script src="~/assets/js/lib/bootstrap.min.js"></script>
+<script src="~/assets/js/lib/splide.min.js"></script>
+<!-- Ionicons -->
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+<!-- Owl Carousel -->
+<script src="~/assets/js/lib/owl.carousel.min.js"></script>
+<!-- Base Js File -->
+<script src="~/assets/js/base.js"></script>
+
+
+<script>
+
+    function Response(title, message, icon) {
+        $('#Error').text(message);
+        notification('notification-12', 5000)
+    }
+
+    @Html.Raw(ViewBag.ErrorMessage)
+</script>
+

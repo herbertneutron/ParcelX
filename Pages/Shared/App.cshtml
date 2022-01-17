@@ -1,0 +1,222 @@
+﻿
+@model ParcelX.Models.ParcelXCusModel
+
+<div id="loader" style="background-color:white">
+    <img src="~/img/loader.png" alt="icon" class="loading-icon">
+</div>
+<div class="Floatup">
+
+    <style>
+
+
+        .Floatup {
+            z-index: 1;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+
+    <div id="appCapsule" class="form-button-group  transparent" style="max-width:60vh;margin:0 auto;top:20%">
+        <div class="section mt-2">
+            <div class="card" style=" background: rgba(0, 0, 0, 0.5);">
+                <div class="card-body">
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#DeliverModal">
+                        Deliver now
+                    </a>
+                    <a href="/Home/PartnerLogin" class="btn btn-warning">
+                        Become a partner
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-button-group  transparent" style="max-width:60vh;margin:0 auto;top:70%">
+        <a href="/Home/Login"  style="background-color:#dea00b!important;border-color:#dea00b!important" class="btn btn-primary btn-lg btn-block">
+            Login to account
+            <ion-icon name="arrow-forward-outline" style="margin-left:20%"></ion-icon>
+        </a>
+     </div>
+    <div class="form-button-group  transparent" style="max-width:60vh;margin:0 auto;top:90%">
+        <p style="color:white">Don't have an account ? <a href="/Home/Register" style="color:#dea00b">Sign up</a></p>
+    </div>
+        <div class="modal fade action-sheet show" id="DeliverModal" tabindex="-1" aria-modal="true" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="border-top-left-radius: 20px; border-top-right-radius: 20px; background: #f8f9fa">
+
+                    <div class="modal-body">
+                        <div class="action-sheet-content" style="padding-top: 0px;padding-bottom: 0px;">
+
+                            <form>
+
+                                <div class="section mt-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="form-group basic p-0">
+                                                <div class="exchange-heading">
+                                                    <label class="group-label" for="fromAmount">Pick-up from</label>
+                                                    <div class="exchange-wallet-info">
+                                                        Area
+                                                    </div>
+                                                </div>
+                                                <div class="exchange-group">
+
+                                                    <input type="text" id="searchPickUp" style="padding-right:0px;width:75%" class="form-control">
+
+                                                    <div class="select-col">
+                                                        <select class="form-control custom-select" id="">
+                                                            <option value="" hidden>Area?</option>
+                                                            <option value="Alimosho">Alimosho</option>
+                                                            <option value="Ajeromi-Ifelodun">Ajeromi-Ifelodun</option>
+                                                            <option value="Kosofe">Kosofe</option>
+                                                            <option value="Mushin">Mushin</option>
+                                                            <option value="Oshodi-Isolo">Oshodi-Isolo</option>
+                                                            <option value="Ojo">Ojo</option>
+                                                            <option value="Ikorodu">Ikorodu</option>
+                                                            <option value="Surulere">Surulere</option>
+                                                            <option value="Agege">Agege</option>
+                                                            <option value="Ifako-Ijaiye">Ifako-Ijaiye</option>
+                                                            <option value="Somolu">Somolu</option>
+                                                            <option value="Amuwo-Odofin">Amuwo-Odofin</option>
+                                                            <option value="Lagos Mainland">Lagos Mainland</option>
+                                                            <option value="Ikeja">Ikeja</option>
+                                                            <option value="Eti-Osa">Eti-Osa</option>
+                                                            <option value="Badagry">Badagry</option>
+                                                            <option value="Apapa">Apapa</option>
+                                                            <option value="Lagos Island">Lagos Island</option>
+                                                            <option value="Epe">Epe</option>
+                                                            <option value="Ibeju-Lekki">Ibeju-Lekki</option>
+                                                            <option value="AL">ketu</option>
+                                                            <option value="Maryland">Maryland</option>
+                                                            <option value="Ikoyi">Ikoyi</option>
+                                                            <option value="Ikoyi">Ajah</option>
+                                                            <option value="Egbeda">Egbeda</option>
+                                                            <option value="Victoria Island">Victoria Island</option>
+                                                            <option value="Gbagada">Gbagada</option>
+                                                            <option value="Ogudu">Ogudu</option>
+                                                            <option value="Ipaja">Ipaja</option>
+                                                            <option value="Yaba">Yaba</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="section">
+                                    <div class="exchange-line">
+                                        <div class="exchange-icon">
+                                            <ion-icon name="swap-vertical-outline" role="img" class="md hydrated" aria-label="swap vertical outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="section">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="form-group basic p-0">
+                                                <div class="exchange-heading">
+                                                    <label class="group-label" for="toAmount">Deliver to</label>
+                                                    <div class="exchange-wallet-info">
+                                                        Area
+                                                    </div>
+                                                </div>
+                                                <div class="exchange-group">
+
+                                                    <input type="text" id="searchDestination" style="padding-right:0px;width:75%" class="form-control">
+
+                                                    <div class="select-col">
+                                                        <select class="form-control custom-select" id="">
+                                                            <option value="" hidden>Area?</option>
+                                                            <option value="Ikeja">Ikeja</option>
+                                                            <option value="Ipaja">Ipaja</option>
+                                                            <option value="Lekki">Lekki</option>
+                                                            <option value="VI">VI</option>
+                                                            <option value="Yaba">Yaba</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="form-button-group  transparent" style="max-width:30vh;margin:0 auto;position:unset!important">
+                        <button type="button" class="btn btn-primary btn-block btn-lg" sty data-bs-dismiss="modal">Request</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="notification-8" class="notification-box tap-to-close show" style="display:none">
+        <div class="notification-dialog ios-style">
+            <div class="notification-header">
+                <div class="in">
+                    <img src="assets/img/sample/avatar/avatar3.jpg" alt="image" class="imaged w24 rounded">
+                    <strong>John Pacheco</strong>
+                </div>
+                <div class="right">
+                    <span>5 mins ago</span>
+                </div>
+            </div>
+            <div class="notification-content">
+                <div class="in">
+                    <h3 class="subtitle">Tap to close</h3>
+                    <div class="text">
+                        Tap on this notification to close.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyD1eGdP6hCYQ06z86dMEwoLNFMPYPbhgYs&amp"></script>
+    <script src="~/assets/js/lib/popper.min.js"></script>
+    <script src="~/assets/js/lib/apexcharts.min.js"></script>
+    <script src="~/assets/js/lib/bootstrap.min.js"></script>
+    <script src="~/assets/js/lib/splide.min.js"></script>
+    <!-- Ionicons -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <!-- Owl Carousel -->
+    <script src="~/assets/js/lib/owl.carousel.min.js"></script>
+    <!-- Base Js File -->
+    <script src="~/assets/js/base.js"></script>
+    <script>
+        function checkIsMobile() {
+            if (navigator.userAgent.indexOf("Mobile") > 0) {
+                return true;
+            } else {
+                alert('We currently run ONLY on mobile ')
+                window.location.href = "https://parcelx.azurewebsites.net/Home/Login";
+            }
+        }
+
+        //checkIsMobile()</script>
+
+    <script>function initialize() {
+            var input = document.getElementById('searchPickUp');
+            new google.maps.places.Autocomplete(input);
+            var input = document.getElementById('searchDestination');
+            new google.maps.places.Autocomplete(input);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);</script>
